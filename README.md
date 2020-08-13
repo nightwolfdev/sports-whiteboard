@@ -4,6 +4,9 @@
 
 Illustrate formations and plays on a digital whiteboard.
 
+## Demo
+* [Sports Whiteboard](https://nightwolf.dev/demos/sports-whiteboard)
+
 ## Features
 
 * Generic board and objects to allow for use by a variety of sports

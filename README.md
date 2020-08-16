@@ -4,8 +4,9 @@
 
 Illustrate formations and plays on a digital whiteboard.
 
-## Demo
-* [Sports Whiteboard](https://nightwolf.dev/demos/sports-whiteboard)
+## Links
+* [Demo](https://nightwolf.dev/demos/sports-whiteboard)
+* [p5.js](https://p5js.org)
 
 ## Features
 

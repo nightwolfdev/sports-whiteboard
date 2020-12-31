@@ -45,6 +45,11 @@ function mousePressed(e) {
 		if (board.addBall) {
 			addObject('ball');
 		}
+
+		// Draw control enabled.
+		if (board.drawing) {
+			board.draw(false);
+		}		
 		
 		// Set coordinates of mouse/touch.
 		board.x = mouseX;
@@ -76,7 +81,7 @@ function mouseDragged(e) {
 	
 		// Draw control enabled.
 		if (board.drawing) {
-			board.draw();
+			board.draw(true);
 		}
 	
 		// Erase control enabled.

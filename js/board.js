@@ -127,6 +127,7 @@ Board.prototype.buildControls = function() {
 		button.addClass('fa ' + control.class + ' fa-2x fa-fw control');
 		button.attribute('title',control.title);
 		button.position(x,y);
+
 		if (control.callback) {
 			button.mousePressed(control.callback);
 		}
@@ -267,21 +268,27 @@ Board.prototype.move = function() {
 }
 
 // Draw on board based on mouse/touch location.
-Board.prototype.draw = function() {
+Board.prototype.draw = function(dragging) {
 	var targetX = mouseX,
 		targetY = mouseY;
-	this.x += (targetX - this.x) * this.easing;
-	this.y += (targetY - this.y) * this.easing;
+
 	strokeWeight(this.penSize);
 	stroke(this.color);
-	line(this.x,this.y,this.px,this.py);
-	this.px = this.x;
-	this.py = this.y;
+
+	if (dragging) {
+		this.x += (targetX - this.x) * this.easing;
+		this.y += (targetY - this.y) * this.easing;
+		line(this.x, this.y, this.px, this.py);
+		this.px = this.x;
+		this.py = this.y;
+	} else {
+		line(targetX, targetY, targetX, targetY);
+	}
 }
 
 // Erase drawing on board based on mouse/touch location.
 Board.prototype.erase = function() {
 	strokeWeight(this.eraserSize);
 	stroke(this.backgroundColor);
-	line(mouseX,mouseY,pmouseX,pmouseY);	
+	line(mouseX, mouseY, pmouseX, pmouseY);	
 }

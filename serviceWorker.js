@@ -1,5 +1,5 @@
 // Define variables.
-var version = 'v6::',
+var version = 'v7::',
 	urlsToCache = [
 		'./',
 		'index.html',
